@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>Food Delivery App</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            font-family: "Montserrat", sans-serif;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .navbar {
+            width: 100%;
+            height: 50px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid black;
+            background-color: gray;
+        }
+        .nav-brand {
+            height: 80%;
+            padding: 0px 10px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+        }
+        .nav-info {
+            height: 80%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .nav-info > a {
+            padding: 5px 10px;
+            margin: 3px;
+            text-decoration: none;
+            color: #121212;
+        }
+        .nav-signup {
+            height: 80%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .nav-signup > img , .nav-signup > button {
+            margin: 10px;
+        }
+        .btn-signup {
+            background-color: #12121200;
+            padding: 8px 15px;
+            border: 1px solid #121212;
+            border-radius: 10px;
+            font-family: "Montserrat", sans-serif;
+        }
+        .poster {
+            width: 80%;
+            height: 300px;
+            margin: 40px 0px;
+            border-radius: 20px;
+        }
+        .poster-info {
+            width: 100%;
+            height: 300px;
+            border-radius: 20px;
+
+            background-color: seagreen;
+            margin-top: -304px;
+            color: #ffffff;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .poster-info > h2 , .poster-info > p {
+            width: 50%;
+            text-align: center;
+        }
+        .expore {
+            width: 80%;
+            margin-bottom: 100px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            border-bottom: 1.5px solid #121212;
+        }
+        .expore-items {
+            width: 100%;   
+            height: 190px;    
+            display: flex;     
+            flex-direction: row;    
+            align-items: center;   
+            overflow-y:hidden;          
+            padding: 10px 0;    
+        }
+
+        .food-item {
+            width: 200px;
+            height: 100%;
+            margin-right: 20px;
+            padding: 10px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .dishes-container {
+            width: 80%;
+            margin-top: -80px;
+        }
+
+        .dishes {
+            width: 100%;
+            padding: 10px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .dish {
+            width: 300px;
+            height: 350px;
+            border: 1px solid #121212;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+        .dish-image {
+            height: 50%;
+        }
+        .dish-container {
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .dish-info {
+            width: 95%;
+        }
+        .dish-desc {
+            margin-top: -10px;
+            font-size: .9rem;
+        }
+        .footer{
+            background-color: gray;
+            padding: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-desc{
+            padding-left: 80px;
+            width: 40%;
+            align-items: end;
+        }
+        .footer-text{
+            align-items: start;
+        }
+        .footer-contact{
+            padding-right: 50px;
+            padding-bottom: 75px;
+            padding-left: 20px;
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            .nav-info, .poster-info > p ,.footer-text{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" id="nav-bar">
+        <div class="nav-brand">
+            <img src="./assets/icons8-food-truck-40 (1).png" style="padding-right: 10px;">
+            <h3>FOOD PREP</h3>
+        </div>
+        <div class="nav-info">
+            <a href="#nav-bar">Home</a>
+            <a href="#explore">Menu</a>
+            <a href="#contact">Contact us</a>
+        </div>
+        <div class="nav-signup">
+            <img src="./assets/icon.png" />
+            <button class="btn-signup">Sign up</button>
+        </div>
+    </div>
+    <div class="poster">
+        <img src="./assets/background.jpg" style="object-fit: cover; width: 100%; height: 100%; border-radius: 20px;"/>
+        <div class="poster-info">
+            <h2>Order your favorite food here</h2>
+            <p>Choose from a diverse menu featuring a delectable array of dishes crafted with the finest ingredients and culinary expertise.</p>
+            <button class="btn-signup" style="background-color: white;" >View Menu</button>
+        </div>
+    </div>
+    <div class="expore" id="explore">
+        <h2>Explore our menu</h2>
+        <p>Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
+        <div class="expore-items"></div>
+    </div>
+    <div class="dishes-container">
+        <h2>Top dishes near you</h2>
+        <div class="dishes"></div>
+    </div>
+    <div class="footer">
+        <div class="footer-desc">
+            
+            <h3> <img src="./assets/icons8-food-truck-40 (1).png" style="padding-right: 10px;"> FOODPREP</h3>
+            <div class="footer-text">
+             <p>You can order delicious dishes of diverse cuisine at greater prices at your favourite restaraunts of your choice just in a moment while chilling in your home.</p>
+            </div>
+            <div class="buttons">
+              <a href="https://www.facebook.com/" style="text-decoration: none;">
+                <img src="./assets/icons8-facebook-logo-24.png" alt="">
+              </a>
+              <a href="https://x.com/" style="text-decoration: none;">
+                <img src="./assets/icons8-twitter-24.png" alt="">
+              </a>
+              <a href="https://www.instagram.com/">
+                <img src="./assets/icons8-instagram-24.png" alt="">
+              </a>
+            </div>
+        </div>
+        <div class="footer-about" style="padding-left: 20px;">
+            <h3>COMPANY</h3>
+            <a href="#nav-bar" style="text-decoration:none; color: black;">Home</a>
+            <p><a href="#nav-bar" style="text-decoration: none ;color: black;" >About Us</a></p>
+            <p><a href="#explore" style="text-decoration: none ;color: black;">Menu</a></p>
+            <p><a href="#explore" style="text-decoration: none;color: black;">Review</a></p>
+        </div>
+        <div class="footer-contact" id="contact">
+            <h3>Contact Us</h3>
+            <p>+91 98765 43210</p>
+            <p>www.foodprep.com</p>
+        </div>
+    </div>
+    <div class="cpright">
+      <p>Copyright 2025@ FoodPrep. All rights reserved.</p>
+    </div>
+
+    <script>
+        const imageSrc = ["./assets/Explore menu/menu_1-CpSfC1Ff .webp", "./assets/Explore menu/menu_2-6QL_uDtg.webp", "./assets/Explore menu/menu_3-2xw_iDUH.webp", "./assets/Explore menu/menu_4-CpXAwO71.webp", "./assets/Explore menu/menu_5-BLqPAi9S.webp", "./assets/Explore menu/menu_6-BAKCTvIj.webp", "./assets/Explore menu/menu_7-Dbn_MJmR.webp", "./assets/Explore menu/menu_8-D3TIbU8x.webp"]
+        const name = ["Salad", "Rolls", "Deserts", "Sandwich", "Cake", "Pure Veg", "Pasta", "Noodles"]
+
+        let htmlData = ""
+        for(let i = 0; i < imageSrc.length; i++){
+            htmlData = htmlData + 
+            `<div class="food-item" id="food-item-${i}"" onclick="update(this)">
+                <img src="${imageSrc[i]}"/>
+                <p>${name[i]}</p>
+            </div>
+            \n
+            ` 
+        }
+        console.log(htmlData)
+        document.getElementsByClassName("expore-items")[0].innerHTML = htmlData
+
+        function updateSalad() {
+            const salad = [
+            {
+                imgSrc : './assets/Salad/1738028214561food_1.png',
+                name : 'Greek salad',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 120,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Salad/1738028242221food_2.png',
+                name : 'Veg salad',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 180,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Salad/1738028267213food_3.png',
+                name : 'Clover Salad',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 160,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Salad/1738028285609food_4.png',
+                name : 'Chicken Salad',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 240,
+                ratings : 4
+            }
+        ]
+
+
+        let dishesdata = ''
+        for(let i = 0; i < salad.length; i++){
+            dishesdata += 
+            `<div class="dish">
+                <img src="${salad[i].imgSrc}" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                <div class="dish-container">
+                    <div class="dish-info">
+                        <h4 class="dish-title">${salad[i].name}</h4>
+                        <p class="dish-desc">${salad[i].desc}</p>
+                        <p class="dish-price">₹${salad[i].price}</p>
+                    </div>
+                </div>
+            </div>\n`
+        }
+
+        document.getElementsByClassName('dishes')[0].innerHTML = dishesdata
+
+        }
+
+        function updateRolls() {
+            const rolls = [
+            {
+                imgSrc : './assets/Rolls/roll1.png',
+                name : 'Chicken Roll',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 120,
+            },
+            {
+                imgSrc : './assets/Rolls/roll2.png',
+                name : 'Peri Peri Roll',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 180
+            },
+            {
+                imgSrc : './assets/Rolls/roll3.png',
+                name : 'Veg Roll',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 160
+            }
+        ]
+
+
+        let dishesdata = ''
+        for(let i = 0; i < rolls.length; i++){
+            dishesdata += 
+            `<div class="dish">
+                <img src="${rolls[i].imgSrc}" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                <div class="dish-container">
+                    <div class="dish-info">
+                        <h4 class="dish-title">${rolls[i].name}</h4>
+                        <p class="dish-desc">${rolls[i].desc}</p>
+                        <p class="dish-price">₹${rolls[i].price}</p>
+                    </div>
+                </div>
+            </div>\n`
+        }
+
+        document.getElementsByClassName('dishes')[0].innerHTML = dishesdata
+
+        }
+
+        function updateDesserts() {
+            const Desserts = [
+            {
+                imgSrc : './assets/Icecream/Icecream2.png',
+                name : 'Fruit Icecream',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 220
+            },
+            {
+                imgSrc : './assets/Icecream/Icecream1.png',
+                name : 'Ripple Icecream',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 140
+            },
+            {
+                imgSrc : './assets/Icecream/Icecream4.png',
+                name : 'Vannila Icecream',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 80
+            },
+            {
+                imgSrc : './assets/Icecream/Icecream3.png',
+                name : 'Jar Icecream',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 100
+            }
+        ]
+
+
+        let dishesdata = ''
+        for(let i = 0; i < Desserts.length; i++){
+            dishesdata += 
+            `<div class="dish">
+                <img src="${Desserts[i].imgSrc}" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                <div class="dish-container">
+                    <div class="dish-info">
+                        <h4 class="dish-title">${Desserts[i].name}</h4>
+                        <p class="dish-desc">${Desserts[i].desc}</p>
+                        <p class="dish-price">₹${Desserts[i].price}</p>
+                    </div>
+                </div>
+            </div>\n`
+        }
+
+        document.getElementsByClassName('dishes')[0].innerHTML = dishesdata
+
+        }
+
+        function updateSandwich() {
+            const Sandwich = [
+            {
+                imgSrc : './assets/Sandwich/sandwich2.png',
+                name : 'Vegan Sandwich',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 115
+            },
+            {
+                imgSrc : './assets/Sandwich/sandwich1.png',
+                name : 'Chicken Sandwich',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 120
+            },
+            {
+                imgSrc : './assets/Sandwich/sandwich4.png',
+                name : 'Grilled Sandwich',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 160
+            },
+            {
+                imgSrc : './assets/Sandwich/sandwich3.png',
+                name : 'Bread Sandwich',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 240
+            }
+        ]
+
+
+        let dishesdata = ''
+        for(let i = 0; i < Sandwich.length; i++){
+            dishesdata += 
+            `<div class="dish">
+                <img src="${Sandwich[i].imgSrc}" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                <div class="dish-container">
+                    <div class="dish-info">
+                        <h4 class="dish-title">${Sandwich[i].name}</h4>
+                        <p class="dish-desc">${Sandwich[i].desc}</p>
+                        <p class="dish-price">₹${Sandwich[i].price}</p>
+                    </div>
+                </div>
+            </div>\n`
+        }
+
+        document.getElementsByClassName('dishes')[0].innerHTML = dishesdata
+
+        }
+
+        function updateCake() {
+            const cake = [
+            {
+                imgSrc : './assets/Cake/cake2.png',
+                name : 'Vegan Cake',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 120,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Cake/cake1.png',
+                name : 'Cup Cake',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 60,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Cake/cake4.png',
+                name : 'Sliced Cake',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 60,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Cake/cake3.png',
+                name : 'Butterscotch Cake',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 200,
+                ratings : 4
+            }
+        ]
+
+
+        let dishesdata = ''
+        for(let i = 0; i < cake.length; i++){
+            dishesdata += 
+            `<div class="dish">
+                <img src="${cake[i].imgSrc}" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                <div class="dish-container">
+                    <div class="dish-info">
+                        <h4 class="dish-title">${cake[i].name}</h4>
+                        <p class="dish-desc">${cake[i].desc}</p>
+                        <p class="dish-price">₹${cake[i].price}</p>
+                    </div>
+                </div>
+            </div>\n`
+        }
+
+        document.getElementsByClassName('dishes')[0].innerHTML = dishesdata
+
+        }
+
+        function updatePureVeg() {
+            const pureveg= [
+            {
+                imgSrc : './assets/Pure Veg/pureveg1.png',
+                name : 'Garlic Mushroom',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 115,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Pure Veg/pureveg2.png',
+                name : 'Mix Veg Pulao',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 120,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Pure Veg/pureveg3.png',
+                name : 'Rice Zucchini',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 160,
+                ratings : 4
+            }
+        ]
+
+
+        let dishesdata = ''
+        for(let i = 0; i < pureveg.length; i++){
+            dishesdata += 
+            `<div class="dish">
+                <img src="${pureveg[i].imgSrc}" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                <div class="dish-container">
+                    <div class="dish-info">
+                        <h4 class="dish-title">${pureveg[i].name}</h4>
+                        <p class="dish-desc">${pureveg[i].desc}</p>
+                        <p class="dish-price">₹${pureveg[i].price}</p>
+                    </div>
+                </div>
+            </div>\n`
+        }
+
+        document.getElementsByClassName('dishes')[0].innerHTML = dishesdata
+
+        }
+        function updatePasta() {
+            const pasta = [
+            {
+                imgSrc : './assets/Pasta/Pasta2.png',
+                name : 'Tomato Pasta',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 115,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Pasta/Pasta1.png',
+                name : 'Cheese Pasta',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 120,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Pasta/Pasta3.png',
+                name : 'White Sauce Pasta',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 160,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Pasta/Pasta4.png',
+                name : 'Chicken Pasta',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 240,
+                ratings : 4
+            }
+        ]
+
+
+        let dishesdata = ''
+        for(let i = 0; i < pasta.length; i++){
+            dishesdata += 
+            `<div class="dish">
+                <img src="${pasta[i].imgSrc}" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                <div class="dish-container">
+                    <div class="dish-info">
+                        <h4 class="dish-title">${pasta[i].name}</h4>
+                        <p class="dish-desc">${pasta[i].desc}</p>
+                        <p class="dish-price">₹${pasta[i].price}</p>
+                    </div>
+                </div>
+            </div>\n`
+        }
+
+        document.getElementsByClassName('dishes')[0].innerHTML = dishesdata
+
+        }
+
+        function updateNoodles() {
+            const noodles = [
+            {
+                imgSrc : './assets/Noodles/noodle1.png',
+                name : 'Butter Noodles',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 115,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Noodles/noodle2.png',
+                name : 'Veg Noodles',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 120,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Noodles/noodle3.png',
+                name : 'Somen Noodles',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 160,
+                ratings : 4
+            },
+            {
+                imgSrc : './assets/Noodles/noodle4.png',
+                name : 'Bowl Noodles',
+                desc : 'Food provides essential nutrients for overall health and well-being',
+                price : 240,
+                ratings : 4
+            }
+        ]
+
+
+        let dishesdata = ''
+        for(let i = 0; i < noodles.length; i++){
+            dishesdata += 
+            `<div class="dish">
+                <img src="${noodles[i].imgSrc}" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                <div class="dish-container">
+                    <div class="dish-info">
+                        <h4 class="dish-title">${noodles[i].name}</h4>
+                        <p class="dish-desc">${noodles[i].desc}</p>
+                        <p class="dish-price">₹${noodles[i].price}</p>
+                    </div>
+                </div>
+            </div>\n`
+        }
+
+        document.getElementsByClassName('dishes')[0].innerHTML = dishesdata
+
+        }
+
+        function update(obj) {
+            if(obj.id === 'food-item-0'){ // salad
+                updateSalad()
+            }
+            else if(obj.id === 'food-item-1'){ // rolls
+                updateRolls()
+            }
+            else if(obj.id === 'food-item-2'){ // Desserts
+                updateDesserts()
+            }
+            else if(obj.id === 'food-item-3'){ // Sandwich
+                updateSandwich()
+            }
+            else if(obj.id === 'food-item-4'){ // Cake
+                updateCake()
+            }
+            else if(obj.id === 'food-item-5'){ // Pure Veg
+                updatePureVeg()
+            }
+            else if(obj.id === 'food-item-6'){ // Pasta
+                updatePasta()
+            }
+            else { 
+                updateNoodles()
+            }
+            console.log(obj.id)
+        }
+    </script>
+</body>
+</html>
